@@ -61,10 +61,16 @@ public class Main {
             if (ints[i] % 2 != 0) {
                 ints[i]++;
             }
-            if (i > 0) {
-                System.out.print(", ");
+//            if (i > 0) {
+//                System.out.print(", ");
+//            }
+            if (i != ints.length - 1) {
+                System.out.print(ints[i] + ", ");
+            } else {
+                System.out.print(ints[i]);
             }
-            System.out.print(ints[i]);
         }
+        System.out.println();
+
     }
 }
