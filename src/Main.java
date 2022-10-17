@@ -1,6 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         System.out.println("Massives corrected!");
+        generateRandomArray();
+        block2();
+    }
+
+    public static void block1() {
+
 
         System.out.println("Tasks 1-4");
         int[] ints = new int[]{1, 2, 3};
@@ -72,5 +78,41 @@ public class Main {
         }
         System.out.println();
 
+    }
+
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
+    public static void block2() {
+        int sum = 0;
+        int[] arr = generateRandomArray();
+        for (int value : arr) {
+            sum += value;
+        }
+        System.out.println("Сумма трат за месяц " + sum);
+
+        int min = arr[0];
+        int max = arr[0];
+        for (int element : arr) {
+            if (element < min) {
+                min = element;
+            } else if (element > max) {
+                max = element;
+            }
+        }
+        System.out.println("Минимальные затраты за день " + min);
+        System.out.println("Максимальные траты за день " + max);
+
+        int sum1 = 0;
+        for (int i : arr) {
+            sum1 += i;
+        }
+        System.out.println(sum1 / (float) arr.length);
     }
 }
